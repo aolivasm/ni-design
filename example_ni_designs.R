@@ -45,9 +45,8 @@ source("ni_designs_fns.R")
 ##### Controlling conditional power and assuming CAB-LA PE = 92.8% (lambda0 = 0)
 ##### Sensitivity analysis of lambda0 = 12% (lambda0 = 0.12)
 
-obj.designs.app1 = ni_designs(v.list = c(1, 0, 0, 0),
-                              w.list = c(1, 1, 1, 1/(1-0.23)),
-                              l1.list = c(0, 0, -0.23, -0.23),
+obj.designs.app1 = ni_design(u.list = c(1, 1, 1/(1-0.23), 0, 0),
+                              l1.list = c(0, -0.23, -0.23, 1.96*0.61/log(1-0.928), 0),
                               f.preserv = 0.5,
                               null.pe = 0.3,
                               design.alternative.pe = 0.95,
@@ -66,9 +65,8 @@ obj.designs.app1 = ni_designs(v.list = c(1, 0, 0, 0),
 ##### Controlling unconditional power and assuming CAB-LA PE = 92.8% (lambda0 = 0)
 ##### Sensitivity analysis of lambda0 = 12% (lambda0 = 0.12)
 
-obj.designs.app2 = ni_designs(v.list = c(1, 0, 0, 0),
-                              w.list = c(1, 1, 1, 1/(1-0.23)),
-                              l1.list = c(0, 0, -0.23, -0.23),
+obj.designs.app2 = ni_design(u.list = c(1, 1, 1/(1-0.23), 0, 0),
+                              l1.list = c(0, -0.23, -0.23, 1.96*0.61/log(1-0.928), 0),
                               f.preserv = 0.5,
                               null.pe = 0.3,
                               design.alternative.pe = 0.95,
@@ -87,9 +85,8 @@ obj.designs.app2 = ni_designs(v.list = c(1, 0, 0, 0),
 ##### Controlling conditional power and assuming CAB-LA PE = 94.7% (lambda0 = 0.12)
 ##### Sensitivity analysis of lambda0 = 0% (lambda0 = 0)
 
-obj.designs.app3 = ni_designs(v.list = c(1, 0, 0, 0),
-                              w.list = c(1, 1, 1, 1/(1-0.23)),
-                              l1.list = c(0, 0, -0.23, -0.23),
+obj.designs.app3 = ni_design(u.list = c(1, 1, 1/(1-0.23), 0, 0),
+                              l1.list = c(0, -0.23, -0.23, 1.96*0.61/log(1-0.928), 0),
                               f.preserv = 0.5,
                               null.pe = 0.3,
                               design.alternative.pe = 0.95,
@@ -110,6 +107,8 @@ obj.designs.app1
 obj.designs.app2
 obj.designs.app3
 
+obj.designs.app3$`NI criterion: Preserving 50% of active control effect`$`Sample size`/obj.designs.app1$`NI criterion: Preserving 50% of active control effect`$`Sample size`
+obj.designs.app3$`NI criterion: Inferred efficacy of 30% relative to hypothetical placebo`$`Sample size`/obj.designs.app1$`NI criterion: Inferred efficacy of 30% relative to hypothetical placebo`$`Sample size`
 #####################################################################################
 #### Function to explore maximum unconditional power for different design alternatives
 
@@ -133,9 +132,8 @@ obj.designs.app3
 ###      Note: This is only to add an horizontal line to the plots.
 ###  - legend.position: position of the legend in the plots. Default is "bottom".
 
-obj.max.up = explore_max_uncond_power(v.list = c(1, 0, 0, 0),
-                                      w.list = c(1, 1, 1, 1/(1-0.23)),
-                                      l1.list = c(0, 0, -0.23, -0.23),
+obj.max.up = explore_max_uncond_power(u.list = c(1, 1, 1/(1-0.23), 0, 0),
+                                      l1.list = c(0, -0.23, -0.23, -0.45, 0),
                                       f.preserv = 0.5,
                                       null.pe = 0.3,
                                       design.alt.pe = seq(0.65, 0.98, by = 0.01),
