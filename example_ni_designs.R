@@ -1,13 +1,12 @@
 rm(list = ls())
 source("ni_designs_fns.R")
 
-### Main function for trial design: ni_designs()
+### Main function for trial design: ni_design()
 ### Inputs:
-###  - v.list: list of v parameters for the desired analytical methods
-###  - w.list: list of w parameters for the desired analytical methods
-###  - l1.list: list of l1 parameters for the desired analytical methods
-###    + (v, w, l1) = (1, 1, 0) for the 95-95 method
-###    + (v, w, l1) = (0, 1, 0) for the traditional synthesis method
+###  - u.list: list of u parameters for the desired analytic methods
+###  - l1.list: list of l1 parameters for the desired analytic methods
+###    + (u, l1) = (1, 0) for the traditional synthesis method
+###    + (u, l1) = (0, se_cph/g_cph) for the 95-95 method
 ###  - f.preserv: fraction for the preservation of effect criterion
 ###  - null.pe: null efficacy for the inference criterion
 ###  - design.alternative.pe: true efficacy of experimental relative to placebo (design alternative).
@@ -103,21 +102,18 @@ obj.designs.app3 = ni_design(u.list = c(1, 1, 1/(1-0.23), 0, 0),
                               correction = FALSE)
 
 ### Outputs
-obj.designs.app1
-obj.designs.app2
-obj.designs.app3
+summary(obj.designs.app1)
+summary(obj.designs.app2)
+summary(obj.designs.app3)
 
-obj.designs.app3$`NI criterion: Preserving 50% of active control effect`$`Sample size`/obj.designs.app1$`NI criterion: Preserving 50% of active control effect`$`Sample size`
-obj.designs.app3$`NI criterion: Inferred efficacy of 30% relative to hypothetical placebo`$`Sample size`/obj.designs.app1$`NI criterion: Inferred efficacy of 30% relative to hypothetical placebo`$`Sample size`
 #####################################################################################
 #### Function to explore maximum unconditional power for different design alternatives
 
 ### Inputs:
-###  - v.list: list of v parameters for the desired analytical methods
-###  - w.list: list of w parameters for the desired analytical methods
-###  - l1.list: list of l1 parameters for the desired analytical methods
-###    + (v, w, l1) = (1, 1, 0) for the 95-95 method
-###    + (v, w, l1) = (0, 1, 0) for the traditional synthesis method
+###  - u.list: list of u parameters for the desired analytic methods
+###  - l1.list: list of l1 parameters for the desired analytic methods
+###    + (u, l1) = (1, 0) for the traditional synthesis method
+###    + (u, l1) = (0, se_cph/g_cph) for the 95-95 method
 ###  - f.preserv: fraction for the preservation of effect criterion
 ###  - null.pe: null efficacy for the inference criterion
 ###  - design.alternatives.pe: range of design alternatives to explore.

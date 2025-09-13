@@ -23,7 +23,7 @@ library(dplyr)
 ###  - u: unifying parameter.
 ###       +u=0 for fixed-margin methods,
 ###       +u=1 for synthesis methods,
-###       +u=1/(1+l1) for Odem-Davis mehotd   
+###       +u=1/(1+l1) for Odem-Davis method   
 ###  - l1: Assumed fraction of the AC effect that has been lost.
 ###       l1= 1.96*se_cph/g_cph for the 95-95 method.
 ###  - alpha: significance level. Default is 0.025.
@@ -70,8 +70,8 @@ min_l0 = function(g_cph, se_cph, se_xs, f = 0.5, u =1, l1 = 0, alpha = 0.025){
 ################# Power and maximum unconditional power ########################
 
 ### Inputs:
-###  - g_sp_h: historical AC effect estimate
-###  - se_sp: standard error of the historical AC effect estimate
+###  - g_cph: historical AC effect estimate
+###  - se_cph: standard error of the historical AC effect estimate
 ###  - l0: fraction of the historical AC effect that has been lost.
 ###        l0=0 means no loss of AC effect.
 ###  - g_xp: True effect of experimental relative to placebo (design alternative).
@@ -81,11 +81,12 @@ min_l0 = function(g_cph, se_cph, se_xs, f = 0.5, u =1, l1 = 0, alpha = 0.025){
 ###       f = 0.5 by default.
 ###       For inferred efficacy margins, set f=0.
 ###  - delta0: maximum null efficacy. delta0 = 0 for preservation of effect margins.
-###  - v: tool parameter to navigate between synthesis (v=0) and fixed-margin (v=1) methods.
-###  - w: tool parameter to choose a particular fixed-margin method.
-###       c=1 for the 95-95 method.
+###  - u: unifying parameter.
+###       +u=0 for fixed-margin methods,
+###       +u=1 for synthesis methods,
+###       +u=1/(1+l1) for Odem-Davis method  
 ###  - l1: Assumed fraction of the AC effect that has been lost.
-###       l1=0 for the 95-95 method.
+###       l1= 1.96*se_cph/g_cph for the 95-95 method.
 ###  - alpha: significance level. Default is 0.025.
 
 uncond_power = function(g_cph, se_cph, l0 = 0, g_xp, se_xs, f = 0.5, delta0 =0, u =1, l1 = 0, alpha = 0.025){
@@ -282,7 +283,10 @@ explore_max_uncond_power = function(u.list = c(1, 1, 0, 0),
 ###       f = 0.5 by default.
 ###       For inferred efficacy margins, set f=0.
 ###  - delta0: maximum null efficacy. delta0 = 0 for preservation of effect margins.
-###  - u: tool parameter to navigate between synthesis (u=1) and fixed-margin (u=0) methods.
+###  - u: unifying parameter.
+###       +u=0 for fixed-margin methods,
+###       +u=1 for synthesis methods,
+###       +u=1/(1+l1) for Odem-Davis method   
 ###  - l1: Assumed fraction of the AC effect that has been lost.
 ###       l1=1.96*se_cph/g_cph for the 95-95 method.
 ###  - alpha: significance level. Default is 0.025.
