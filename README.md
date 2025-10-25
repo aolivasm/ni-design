@@ -7,7 +7,7 @@ The examples used in this repository reproduce the results in the manuscript: [O
 ## Files
 
 - `ni_designs_fns.R` – Contains the two main functions for non-inferiority trial design and all auxiliary functions needed to compute the operating characteristics described in the manuscript.
-- `example_ni_design.R` – Provides example scripts illustrating how to use the functions.
+- `example_ni_designs.R` – Provides example scripts illustrating how to use the functions.
 
 ## Functions
 
@@ -55,15 +55,14 @@ Explores the maximum unconditional power across a range of design alternatives a
 
 ## Usage
 
-All example code is in `ni_design_examples.R`. To run the examples:
+All example code is in `example_ni_designs.R`. To run the examples:
 
 ```R
 # Load the functions
 source("ni_designs_fns.R")
-
-# Run the example designs and plots
-source("ni_design_examples.R")
 ```
+
+Then run the example designs and plots in the `example_ni_designs.R` script.
 
 ## Requirements
 - R (version >= 4.0)
