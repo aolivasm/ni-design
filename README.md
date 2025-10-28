@@ -2,7 +2,7 @@
 
 This repository provides R code for generating non-inferiority trial design specifications and computing operating characteristics under the preservation-of-effect and inferred-efficacy criteria when the outcome is time to event and the effect is measured in the log hazard ratio scale. The main function is `ni_design()`, which computes non-inferiority margins, required numbers of events, sample sizes, and unconditional power for a set of analytical methods defined by `(u, lambda1)` pairs.
 
-The examples used in this repository reproduce the results in the manuscript: [Olivas et al., 2025, arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX).
+The examples used in this repository reproduce the results in the manuscript: [Olivas-Martinez et al., 2025, arXiv:2510.22071](https://arxiv.org/abs/2510.22071).
 
 ## Files
 
