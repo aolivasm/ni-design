@@ -1,8 +1,18 @@
 # Non-Inferiority Trial Design R Functions
 
-This repository provides R code for generating non-inferiority trial design specifications and computing operating characteristics under the preservation-of-effect and inferred-efficacy criteria when the outcome is time to event and the effect is measured in the log hazard ratio scale. The main function is `ni_design()`, which computes non-inferiority margins, required numbers of events, sample sizes, and unconditional power for a set of analytical methods defined by `(u, lambda1)` pairs.
+## Background
 
-The examples used in this repository reproduce the results in the manuscript: [Olivas-Martinez et al., 2025, arXiv:2510.22071](https://arxiv.org/abs/2510.22071).
+Active-controlled non-inferiority trials are commonly used when an effective intervention already exists and a placebo-controlled design is not feasible or ethical. In these trials, a new experimental intervention is compared against an active control rather than placebo. The goal is to show that the experimental intervention is not unacceptably worse than the active control, while potentially offering other advantages such as improved safety, tolerability, cost, or feasibility.
+
+A fundamental challenge in active-controlled trials is the absence of a placebo arm. As a result, assessing non-inferiority necessarily relies on historical estimates of the active control effect relative to placebo, along with assumptions about how well those estimates apply to the current trial population.
+
+The traditional non-inferiority criterion is based on _preservation of effect_, which requires the experimental intervention to preserve a specified fraction (often 50%) of the active control’s effect relative to placebo.
+
+When the active control is highly effective, preservation-of-effect criteria may impose an unrealistically high bar, even for interventions with meaningful public health value. This has motivated alternative success criteria, such as _inferred efficacy_, which assess whether the experimental intervention would have met a predefined efficacy threshold relative to a hypothetical placebo.
+
+This repository provides R code for computing non-inferiority trial design operating characteristics under the preservation-of-effect and inferred-efficacy criteria when the outcome is time to event and intervention effects are measured in the log hazard ratio scale. The main function, `ni_design()`, computes non-inferiority margins, required numbers of events, sample sizes, and unconditional power for a set of analytical methods defined by `(u, lambda1)` pairs.
+
+The examples included in this repository reproduce the results presentend in the manuscript [Olivas-Martinez et al., 2025, arXiv:2510.22071](https://arxiv.org/abs/2510.22071), which develops the underlying methodological framework and how the non-inferiority criteria and different analytical approaches are parameterized and interpreted.
 
 ## Files
 
