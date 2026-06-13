@@ -78,7 +78,8 @@ Then run the example designs and plots in the `example_ni_designs.R` script.
 - R (version >= 4.0)
 - Any additional packages will be loaded within the scripts.
 
-### Citation
+## Citation
 
 If you use the `ni_design()` function or this repository in your research, please cite the associated paper:
+
 A. Olivas-Martinez, F. Gao, and H. Janes, “A General Framework for Designing and Evaluating Active-Controlled Trials with Non-Inferiority Objectives,” Statistics in Medicine 45, no. 13-14 (2026): e70618, https://doi.org/10.1002/sim.70618.
