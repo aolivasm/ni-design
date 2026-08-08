@@ -1,0 +1,17 @@
+bibentry(
+  bibtype = "Article",
+  title = paste(
+    "A General Framework for Designing and Evaluating",
+    "Active-Controlled Trials with Non-Inferiority Objectives"
+  ),
+  author = c(
+    person("Antonio", "Olivas-Martinez"),
+    person("Fei", "Gao"),
+    person("Holly", "Janes")
+  ),
+  journal = "Statistics in Medicine",
+  year = "2026",
+  volume = "45",
+  pages = "e70618",
+  doi = "10.1002/sim.70618"
+)

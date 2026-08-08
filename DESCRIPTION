@@ -1,0 +1,31 @@
+Package: nidesigns
+Title: Design Active-Controlled Trials with Non-Inferiority Objectives
+Version: 0.1.0
+Authors@R: c(
+    person("Antonio", "Olivas-Martinez", email = "aolivas@uw.edu",
+           role = c("aut", "cre")),
+    person("Fei", "Gao", role = "ctb"),
+    person("Holly", "Janes", role = "ctb")
+  )
+Description: Implements the general framework of Olivas-Martinez, Gao,
+    and Janes (2026) for designing and evaluating active-controlled trials
+    with non-inferiority objectives. The package supports conditional and
+    unconditional operating characteristics, preservation-of-effect and
+    inferred-efficacy criteria, and sample-size calculations for hazard
+    ratios, relative risks, risk differences, and mean differences.
+License: MIT + file LICENSE
+URL: https://github.com/aolivasm/ni-designs
+BugReports: https://github.com/aolivasm/ni-designs/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: R (>= 4.1.0)
+Imports:
+    ggplot2,
+    nleqslv,
+    stats,
+    utils
+Suggests:
+    knitr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

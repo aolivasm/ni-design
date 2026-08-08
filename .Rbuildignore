@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git$
+^\.github$
+^tmp$
+^backup_code\.R$
+^ni_design_fcn\.R$
+^ni_designs_fns\.R$
+^example_ni_designs\.R$
+^\.positai$
