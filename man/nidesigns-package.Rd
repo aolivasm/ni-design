@@ -20,8 +20,8 @@ Objectives." \emph{Statistics in Medicine}, 45, e70618.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/aolivasm/ni-designs}
-  \item Report bugs at \url{https://github.com/aolivasm/ni-designs/issues}
+  \item \url{https://github.com/aolivasm/ni-design}
+  \item Report bugs at \url{https://github.com/aolivasm/ni-design/issues}
 }
 
 }

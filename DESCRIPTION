@@ -14,8 +14,8 @@ Description: Implements the general framework of Olivas-Martinez, Gao,
     inferred-efficacy criteria, and sample-size calculations for hazard
     ratios, relative risks, risk differences, and mean differences.
 License: MIT + file LICENSE
-URL: https://github.com/aolivasm/ni-designs
-BugReports: https://github.com/aolivasm/ni-designs/issues
+URL: https://github.com/aolivasm/ni-design
+BugReports: https://github.com/aolivasm/ni-design/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

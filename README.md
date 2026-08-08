@@ -47,7 +47,7 @@ Install the development version from GitHub:
 
 ```r
 # install.packages("pak")
-pak::pak("aolivasm/ni-designs")
+pak::pak("aolivasm/ni-design")
 ```
 
 Load the package with:
