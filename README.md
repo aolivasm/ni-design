@@ -20,6 +20,27 @@ risk differences, and mean differences.
 > *Statistics in Medicine*. 2026;45:e70618.
 > [doi:10.1002/sim.70618](https://doi.org/10.1002/sim.70618)
 
+## Background
+
+Active-controlled non-inferiority trials are used when an effective
+intervention already exists and a placebo-controlled design is not feasible or
+ethical. The objective is to show that an experimental intervention is not
+unacceptably worse than the active control while it may offer advantages in
+safety, tolerability, cost, or feasibility.
+
+Because these trials do not include a placebo arm, assessing non-inferiority
+relies on historical estimates of the active-control effect relative to placebo
+and assumptions about how well that evidence applies to the target trial. The
+traditional preservation-of-effect criterion requires the experimental
+intervention to preserve a specified fraction of that effect. When the active
+control is highly effective, an inferred-efficacy criterion can instead require
+the experimental intervention to exceed a prespecified efficacy threshold
+relative to a hypothetical placebo.
+
+The framework makes the historical assumptions explicit, represents common
+fixed-margin and synthesis methods through `(u, lambda1)`, and evaluates both
+conditional and unconditional operating characteristics.
+
 ## Installation
 
 Install the development version from GitHub:
@@ -69,6 +90,18 @@ The principal method settings are:
 | Odem-Davis | `1 / (1 + l1)` | prespecified relative effect deviation |
 | 95-95 fixed margin | `0` | `1.96 * hist.ac.effect.se / log(hist.ac.hr)` |
 | 0-95 fixed margin | `0` | `0` |
+
+The primary user-facing functions are:
+
+- `ni_design()` for prevention efficacy and log hazard-ratio designs.
+- `ni_design_hr()` when hazard ratios are the natural inputs.
+- `ni_design_rr()`, `ni_design_rd()`, and `ni_design_md()` for relative risks,
+  risk differences, and mean differences.
+- `explore_max_uncond_power()` for examining the maximum attainable
+  unconditional power across design alternatives.
+
+Use `?ni_design` and the corresponding function help pages for complete input
+and output definitions.
 
 For every requested method and success criterion, the design output reports the
 non-inferiority margin, required number of events or target variance, sample
@@ -273,6 +306,23 @@ improvements intentionally affect only cases outside that published example:
   definition of the historical variance for fixed-margin methods (`u = 0`).
 - The new effect-measure functions report both target and achieved variance and
   mark unattainable designs explicitly.
+
+## Legacy script interface
+
+The original interface remains available for users who previously cloned the
+repository:
+
+- `ni_designs_fns.R` contains the original design and auxiliary functions.
+- `example_ni_designs.R` contains the original examples.
+
+Existing scripts may continue to use:
+
+```r
+source("ni_designs_fns.R")
+```
+
+The package interface is recommended for new work because it adds documented
+functions, input validation, regression tests, and standard installation.
 
 The original root-level scripts remain in the repository for provenance and
 backward compatibility. Existing users may continue to source those scripts;
